@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+  <title>이은찬 | AI 연구개발자 포트폴리오</title>
+  
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ------------------- */
+    /* --- 기본 & 초기화 --- */
+    /* ------------------- */
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --background-color: #f4f7f6;
+      --text-color: #333;
+      --card-bg-color: #ffffff;
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--secondary-color);
+      line-height: 1.2;
+    }
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.2rem;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+
+    /* ------------------- */
+    /* --- 헤더 & 내비게이션 --- */
+    /* ------------------- */
+    .header {
+      background: var(--card-bg-color);
+      box-shadow: var(--shadow);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* ------------------- */
+    /* --- Hero 섹션 --- */
+    /* ------------------- */
+    #hero {
+      background: linear-gradient(120deg, rgba(52,152,219,0.85) 0%, rgba(44,62,80,0.7) 100%), url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: #fff;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.2);
+    }
+    
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      color: #fff !important;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+      text-shadow: 0 4px 24px rgba(44,62,80,0.25), 0 2px 8px rgba(0,0,0,0.35);
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+      background-clip: unset;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #eaf6fb;
+      text-shadow: 0 2px 8px rgba(44,62,80,0.15);
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 24px rgba(52,152,219,0.15);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      animation: btn-glow 2s infinite alternate;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(52,152,219,0.25);
+    }
+
+    @keyframes btn-glow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(52,152,219,0.3);
+      }
+      100% {
+        box-shadow: 0 0 24px 8px rgba(52,152,219,0.25);
+      }
+    }
+    
+    /* ------------------- */
+    /* --- About 섹션 --- */
+    /* ------------------- */
+    .about-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: var(--shadow);
+    }
+    
+    .about-text p {
+        margin-bottom: 1rem;
+    }
+    
+    /* ------------------- */
+    /* --- Skills 섹션 --- */
+    /* ------------------- */
+    #skills {
+        background-color: #eef2f5;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .skill-category {
+      background: var(--card-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-category:hover {
+      transform: translateY(-3px);
+    }
+    
+    .skill-category i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .skill-category h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+    
+    .skill-category ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .skill-category li {
+      background: var(--primary-color);
+      color: white;
+      padding: 3px 6px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    /* ------------------- */
+    /* --- Experience & Education 섹션 --- */
+    /* ------------------- */
+    #experience-education {
+        background-color: #eef2f5;
+    }
+    
+    .exp-edu-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .exp-edu-column {
+        background: var(--card-bg-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+    }
+    
+    .exp-edu-column h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.2rem;
+        position: relative;
+    }
+
+    .exp-edu-column h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+    
+    .experience-timeline {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .experience-item {
+        background: var(--card-bg-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+    
+    .experience-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .experience-date {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .experience-content h3 {
+        margin-bottom: 5px;
+        color: var(--secondary-color);
+    }
+    
+    .experience-content h4 {
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    
+    .experience-content ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .experience-content li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    .experience-content li::before {
+        content: '▸';
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    /* ------------------- */
+    /* --- Education 섹션 --- */
+    /* ------------------- */
+    .education-timeline {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .education-item {
+        background: transparent;
+        padding: 20px 0;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 20px;
+        position: relative;
+        transition: transform 0.3s ease;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .education-item:last-child {
+        border-bottom: none;
+    }
+    
+    .education-item:hover {
+        transform: translateY(-2px);
+    }
+    
+    .education-date {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .education-content h3 {
+        margin-bottom: 5px;
+        color: var(--secondary-color);
+    }
+    
+    .education-content h4 {
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .education-content p {
+        color: var(--text-color);
+        font-size: 0.95rem;
+    }
+    
+    /* ------------------- */
+    /* --- Publications 섹션 --- */
+    /* ------------------- */
+    #publications {
+        background-color: #eef2f5;
+    }
+    
+    .publications-list {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .publication-item {
+        background: var(--card-bg-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+        position: relative;
+        transition: transform 0.3s ease;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .publication-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .publication-year {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        min-width: 80px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+    
+    .publication-content {
+        flex-grow: 1;
+    }
+    
+    .publication-content h3 {
+        margin-bottom: 8px;
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+    }
+    
+    .publication-content h4 {
+        color: var(--primary-color);
+        font-size: 1rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+    
+    .publication-content p {
+        color: var(--text-color);
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+    
+    .publication-links a {
+        margin-right: 15px;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+    
+    .publication-links a i {
+        margin-right: 5px;
+    }
+    .education-timeline {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .education-item {
+        background: var(--card-bg-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+    
+    .education-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .education-date {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .education-content h3 {
+        margin-bottom: 5px;
+        color: var(--secondary-color);
+    }
+    
+    .education-content h4 {
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .education-content p {
+        color: var(--text-color);
+        font-size: 0.95rem;
+    }
+    
+    /* ------------------- */
+    /* --- Projects 섹션 --- */
+    /* ------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: var(--card-bg-color);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .project-info {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-info h3 {
+      margin-bottom: 10px;
+    }
+    
+    .project-info p {
+      flex-grow: 1;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    
+    .project-links a {
+      margin-right: 15px;
+      font-weight: 700;
+    }
+
+    .project-links a i {
+        margin-right: 5px;
+    }
+    
+    /* ------------------- */
+    /* --- Contact 섹션 --- */
+    /* ------------------- */
+    #contact {
+        background-color: var(--secondary-color);
+        color: #fff;
+    }
+    
+    #contact h2, #contact h2::after {
+        color: #fff;
+        border-color: #fff;
+    }
+    
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-content p {
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info a {
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary-color);
+    }
+    
+    .contact-info i {
+        margin-right: 8px;
+    }
+    
+    /* ------------------- */
+    /* --- Footer --- */
+    /* ------------------- */
+    .footer {
+      background: #1e2a36;
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* ------------------- */
+    /* --- 애니메이션 효과 --- */
+    /* ------------------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* ------------------- */
+    /* --- 보안 스타일 --- */
+    /* ------------------- */
+    /* 이메일 주소 선택 방지 */
+    .contact-info a[onclick*="showEmail"] {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* 텍스트 복사 방지 */
+    .contact-info {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* ------------------- */
+    /* --- 반응형 디자인 --- */
+    /* ------------------- */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      .header .container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .nav-links li {
+        margin: 0 4px;
+      }
+      
+      .nav-links a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+        line-height: 1.4;
+      }
+      
+      .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+      
+      .about-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+      }
+      
+      .profile-img {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .exp-edu-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .exp-edu-column {
+        padding: 20px;
+      }
+      
+      .experience-item, .education-item {
+        padding: 20px;
+      }
+      
+      .publication-item {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .publication-year {
+        align-self: flex-start;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .project-card {
+        margin-bottom: 20px;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .skill-category {
+        padding: 15px;
+      }
+      
+      .skill-category ul {
+        justify-content: flex-start;
+        gap: 8px;
+      }
+      
+      .skill-category li {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .contact-info a {
+        font-size: 1rem;
+        padding: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        display: block;
+        text-align: center;
+      }
+      
+      section {
+        padding: 60px 0;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+      
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3px;
+        justify-content: center;
+      }
+      
+      .nav-links li {
+        margin: 0;
+      }
+      
+      .nav-links a {
+        display: block;
+        padding: 6px 8px;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        font-size: 0.75rem;
+      }
+      
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .publication-item {
+        padding: 15px;
+      }
+      
+      .experience-item, .education-item {
+        padding: 15px;
+      }
+      
+      .project-info {
+        padding: 20px;
+      }
+      
+      .skill-category li {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#hero" class="logo">Eunchan Lee</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience-education">Experience & Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container hero-content">
+      <h1 class="fade-in">안녕하세요, 이은찬입니다. 👋</h1>
+      <p class="fade-in">문제 해결을 즐기는 열정적인 개발자입니다. <br>기술을 통해 더 나은 사용자 경험을 만드는 일에 관심이 많습니다.</p>
+      <a href="#projects" class="btn fade-in">프로젝트 보기</a>
+    </div>
+  </section>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="fade-in">About Me</h2>
+        <div class="about-content fade-in">
+            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=250&h=250&fit=crop" alt="AI 연구 이미지" class="profile-img">
+            <div class="about-text">
+                <p>저는 KAIST에서 전산유체역학(CFD)과 인공지능(AI)의 융합을 통해, 유체 흐름을 정밀하게 예측하는 새로운 딥러닝 모델을 연구하고 있습니다. 복잡한 유동 현상을 데이터 기반으로 해석하고, 기존의 물리 기반 해석을 뛰어넘는 혁신적인 AI 모델을 개발하는 데 집중하고 있습니다.</p>
+                <p>특히, 실제 산업 및 도시 환경에서 발생하는 다양한 유체 문제를 해결하기 위해, 최신 머신러닝 기법을 활용한 연구를 수행하고 있습니다. 이러한 연구를 통해 과학적 발견과 실질적 엔지니어링 문제 해결에 기여하고자 합니다.</p>
+                <p>카카오헬스케어(구. Linewalks)와 테이블매니저에서의 머신러닝 엔지니어 경험을 바탕으로, 데이터와 알고리즘, 그리고 실제 문제 해결의 가치를 누구보다 깊이 이해하고 있습니다. 새로운 기술을 배우고 적용하는 것을 두려워하지 않으며, 동료들과의 협업을 통해 함께 성장하는 것을 중요하게 생각합니다.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <div class="container">
+        <h2 class="fade-in">Publications</h2>
+        <div class="publications-list">
+          <div class="publication-item fade-in">
+            <div class="publication-year">2024</div>
+            <div class="publication-content">
+              <h3>Prediction of Turbulent Flow in Urban Areas Using Artificial Neural Networks</h3>
+              <h4>The Society for Aerospace System Engineering (SASE)</h4>
+              <p>인공 신경망 기반 도심 지역의 난류 유동 예측 연구입니다. 도시 환경에서의 복잡한 유동 현상을 딥러닝을 통해 예측하고 모델링하는 방법을 제시했습니다.</p>
+              <div class="publication-links">
+                <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12058819" target="_blank"><i class="fas fa-file-alt"></i> Conference Paper</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience-education">
+      <div class="container">
+        <div class="exp-edu-grid">
+          <!-- Experience Section -->
+          <div class="exp-edu-column">
+            <h2 class="fade-in">Experience</h2>
+            <div class="experience-timeline">
+              <div class="experience-item fade-in">
+                <div class="experience-date">2021.05 - 2022.05</div>
+                <div class="experience-content">
+                  <h3>Machine Learning Engineer</h3>
+                  <h4>Kakao Healthcare (구. Linewalks)</h4>
+                  <ul>
+                    <li>MDwalks EXI Cardio - 365일 내 심근경색 예측 모델 개발</li>
+                    <li>AngularGrad optimizer 개발 및 TensorFlow 구현체 오픈소스 공개</li>
+                    <li>최신 ML 기술 Follow-up 및 내부 모델 개발 실험</li>
+                    <li>의료 데이터 분석 및 AI 모델 개발</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="experience-item fade-in">
+                <div class="experience-date">2020.01 - 2021.04</div>
+                <div class="experience-content">
+                  <h3>Backend Developer / Machine Learning Engineer</h3>
+                  <h4>테이블매니저(주)</h4>
+                  <ul>
+                    <li>고객사 수요 예측 기능 개발 (AWS EC2, Elasticsearch, ML Model, Backend, Frontend)</li>
+                    <li>2020 AI 챔피언십 참여 (BC 카드 - 소상공인 업종별 단골 고객 분석)</li>
+                    <li>RFM을 이용한 고객분류모델 개발</li>
+                    <li>테이블매니저 백엔드 개발</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <div class="exp-edu-column">
+            <h2 class="fade-in">Education</h2>
+            <div class="education-timeline">
+              <div class="education-item fade-in">
+                <div class="education-date">2024 - Present</div>
+                <div class="education-content">
+                  <h3>M.S. Course in Aerospace Engineering</h3>
+                  <h4>KAIST (Korea Advanced Institute of Science and Technology)</h4>
+                  <p>Machine Learning과 CFD(Computational Fluid Dynamics) 연구 중</p>
+                </div>
+              </div>
+              <div class="education-item fade-in">
+                <div class="education-date">2017 - 2024</div>
+                <div class="education-content">
+                  <h3>B.S. in Mechanical Engineering</h3>
+                  <h4>Korea University</h4>
+                  <p>기계공학부 졸업</p>
+                </div>
+              </div>
+              <div class="education-item fade-in">
+                <div class="education-date">2014 - 2017</div>
+                <div class="education-content">
+                  <h3>High School Diploma</h3>
+                  <h4>Korea Digital Media High School</h4>
+                  <p>해킹방어과 13기</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="fade-in">Projects</h2>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop" alt="AI 최적화 연구" class="project-img">
+            <div class="project-info">
+              <h3>AngularGrad Optimizer 개발</h3>
+              <p>카카오헬스케어 재직 당시 새롭게 제시된 최적화 기법입니다. 컨볼루션 신경망의 각도 수렴을 위한 혁신적인 최적화 방법이며, TensorFlow 구현체를 오픈소스로 공개했습니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/linewalks/AngularGrad-tf" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://blog.linewalks.com/archives/7595" target="_blank"><i class="fas fa-blog"></i> Blog Post</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=250&fit=crop" alt="의료 AI 모델" class="project-img">
+            <div class="project-info">
+              <h3>MDwalks EXI Cardio - 심근경색 예측 모델</h3>
+              <p>365일 내 심근경색 발생을 예측하는 의료 AI 모델입니다. 방대한 의료 데이터를 분석하여 정확한 예측 모델을 개발했으며, 실제 의료 현장에서 활용 가능한 솔루션입니다.</p>
+              <div class="project-links">
+                <a href="https://blog.linewalks.com/archives/7595" target="_blank"><i class="fas fa-heartbeat"></i> Medical AI</a>
+                <a href="https://github.com/hd132620" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="데이터 분석" class="project-img">
+            <div class="project-info">
+              <h3>고객 수요 예측 시스템</h3>
+              <p>테이블매니저에서 개발한 종합적인 데이터 인프라와 ML 시스템입니다. AWS EC2, Elasticsearch, RFM 모델을 활용하여 고객 행동을 분석하고 수요를 예측하는 솔루션입니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/hd132620" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://hd132620.tistory.com/1" target="_blank"><i class="fas fa-blog"></i> Blog</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" alt="모바일 앱 개발" class="project-img">
+            <div class="project-info">
+              <h3>오버워치 리그 2020 이적 알리미</h3>
+              <p>React Native로 개발한 모바일 앱과 TypeScript 기반 서버리스 백엔드입니다. 오버워치 리그 선수들의 이적/영입 소식을 실시간으로 알려주는 서비스입니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/hd132620/OWLTransfer2020App" target="_blank"><i class="fab fa-mobile-alt"></i> Mobile App</a>
+                <a href="https://github.com/hd132620/OWLTransfer2020_functions" target="_blank"><i class="fab fa-github"></i> Backend</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop" alt="투표 시스템" class="project-img">
+            <div class="project-info">
+              <h3>DVIS 투표관리시스템</h3>
+              <p>Java로 개발한 투표 관리 시스템입니다. Android 앱과 관리자 모듈을 포함한 완전한 투표 솔루션으로, 안전하고 투명한 디지털 투표를 지원합니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/hd132620/DVIS_Controller_PT" target="_blank"><i class="fab fa-android"></i> Android App</a>
+                <a href="https://github.com/hd132620/DVIS_Prototype" target="_blank"><i class="fab fa-github"></i> Admin Module</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=250&fit=crop" alt="물리 시뮬레이션" class="project-img">
+            <div class="project-info">
+              <h3>물리 시뮬레이션 프로젝트</h3>
+              <p>Python(NumPy, Matplotlib)을 활용한 자유낙하 시뮬레이터와 C++/ROOT 라이브러리를 이용한 강제조화진동 시뮬레이션입니다. 수치해석과 물리학적 모델링에 중점을 두었습니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/hd132620/FallingSimulator" target="_blank"><i class="fas fa-calculator"></i> Falling Simulator</a>
+                <a href="https://github.com/hd132620/Forced_damped_oscillator" target="_blank"><i class="fas fa-wave-square"></i> Oscillator</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 7 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=250&fit=crop" alt="게임 개발" class="project-img">
+            <div class="project-info">
+              <h3>B-W 게임 (흑과 백)</h3>
+              <p>JavaFX로 구현한 흑과 백 게임입니다. 클라이언트-서버 아키텍처를 사용하여 멀티플레이어 게임을 지원하며, 네트워크 통신과 게임 로직을 포함한 완전한 게임 솔루션입니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/hd132620/B-W" target="_blank"><i class="fas fa-gamepad"></i> Game Client</a>
+                <a href="https://github.com/hd132620/B-W-Server" target="_blank"><i class="fas fa-server"></i> Game Server</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 8 -->
+          <div class="project-card fade-in">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="그래픽스 프로그래밍" class="project-img">
+            <div class="project-info">
+              <h3>Bezier Practice - 그래픽스 프로그래밍</h3>
+              <p>OpenGL에서 Bezier curved surface를 그리기 위한 클래스 모음입니다. C++을 활용한 3D 그래픽스 프로그래밍과 수학적 곡선 모델링을 구현했습니다.</p>
+              <div class="project-links">
+                <a href="https://github.com/hd132620/BezierPractice" target="_blank"><i class="fas fa-cube"></i> Graphics</a>
+                <a href="https://github.com/hd132620" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="fade-in">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category fade-in">
+            <i class="fas fa-brain"></i>
+            <h3>AI & Machine Learning</h3>
+            <ul>
+              <li>TensorFlow</li>
+              <li>PyTorch</li>
+              <li>Keras</li>
+              <li>Scikit-learn</li>
+              <li>XGBoost</li>
+              <li>LightGBM</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>Matplotlib</li>
+              <li>Seaborn</li>
+              <li>Weights & Biases</li>
+              <li>Neural ODEs</li>
+              <li>Fourier Neural Operators</li>
+              <li>Physics-informed Neural Networks</li>
+            </ul>
+          </div>
+          <div class="skill-category fade-in">
+            <i class="fas fa-code"></i>
+            <h3>Programming & Development</h3>
+            <ul>
+              <li>Python</li>
+              <li>C/C++</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>HTML/CSS</li>
+              <li>React Native</li>
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>Flask</li>
+              <li>JavaFX</li>
+              <li>OpenGL</li>
+              <li>CUDA</li>
+            </ul>
+          </div>
+          <div class="skill-category fade-in">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & Infrastructure</h3>
+            <ul>
+              <li>AWS EC2</li>
+              <li>Elasticsearch</li>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>PostgreSQL</li>
+              <li>MySQL</li>
+              <li>Linux</li>
+              <li>Ubuntu</li>
+              <li>Vim</li>
+              <li>VS Code</li>
+              <li>Jupyter</li>
+              <li>Anaconda</li>
+              <li>LaTeX</li>
+            </ul>
+          </div>
+          <div class="skill-category fade-in">
+            <i class="fas fa-calculator"></i>
+            <h3>Computational & Scientific</h3>
+            <ul>
+              <li>MATLAB</li>
+              <li>ParaView</li>
+              <li>PETSc</li>
+              <li>OpenMPI</li>
+              <li>MPICH</li>
+              <li>Slurm</li>
+              <li>ROOT</li>
+              <li>CFD</li>
+              <li>Numerical Analysis</li>
+              <li>Optimization Theory</li>
+              <li>Convex Optimization</li>
+              <li>Distributed Training</li>
+              <li>Pytorch DDP</li>
+              <li>FSDP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="fade-in">Get In Touch</h2>
+            <div class="contact-content fade-in">
+                <p>새로운 기회에 항상 열려있습니다. 함께 할 멋진 프로젝트가 있다면 편하게 연락 주세요!</p>
+                <div class="contact-info">
+                    <a href="#" onclick="showEmail('rkwk2554@naver.com')"><i class="fas fa-envelope"></i>개인 이메일</a>
+                    <a href="#" onclick="showEmail('eunchan.lee@kaist.ac.kr')"><i class="fas fa-envelope"></i>학교 이메일</a>
+                    <a href="https://github.com/hd132620" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/%EC%9D%80%EC%B0%AC-%EC%9D%B4-873581231/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://hd132620.tistory.com/" target="_blank"><i class="fas fa-blog"></i> Blog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Eunchan Lee. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 스크롤 시 콘텐츠가 나타나는 애니메이션 효과
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2, // 요소가 20% 보일 때 애니메이션 실행
+      rootMargin: "0px 0px -50px 0px" // 뷰포트 하단에서 50px 위에서부터 감지 시작
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // 이메일 보호 함수
+    function showEmail(email) {
+      // 간단한 확인 대화상자
+      if (confirm('이메일 주소를 복사하시겠습니까?')) {
+        // 클립보드에 복사
+        navigator.clipboard.writeText(email).then(function() {
+          alert('이메일 주소가 클립보드에 복사되었습니다: ' + email);
+        }).catch(function(err) {
+          // 클립보드 API가 지원되지 않는 경우
+          alert('이메일 주소: ' + email);
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
