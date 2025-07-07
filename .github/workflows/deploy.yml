@@ -34,7 +34,7 @@ jobs:
         run: |
           # 정적 파일을 dist 폴더로 복사
           mkdir -p dist
-          cp -r public/* dist/
+          cp index.html robots.txt dist/
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
